@@ -1,0 +1,40 @@
+{
+    "canisters": {
+      "helpdesk": {
+        "main": "dist/index.js",
+        "type": "custom",
+        "frontend": {
+          "entrypoint": "src/index.html",
+          "canister": "helpdesk"
+        }
+      }
+    },
+    "defaults": {
+      "build": {
+        "packtool": "@dfinity/webpack-plugin"
+      }
+    },
+    "networks": {
+      "local": {
+        "bind": "127.0.0.1:8000",
+        "type": "local",
+        "providers": [
+          {
+            "type": "ephemeral"
+          }
+        ]
+      },
+      "ic": {
+        "type": "ic",
+        "providers": [
+          "https://ic0.app"
+        ]
+      }
+    },
+    "dfx": "0.8.1",
+    "build" : {
+      "output" : "dist",
+      "packtool" : "esbuild"
+    }
+  }
+  
